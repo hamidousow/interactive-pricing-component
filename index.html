@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">        
+        <title>Frontend Mentor | Interactive pricing component</title>   
+        
+    </head>
+    <body>
+        <header>
+            <div class="content">
+                <h1>Simple, traffic-based pricing</h1>
+                <p>Sign-up for our 30-day trial. No credit card required.</p>
+            </div>
+        </header>
+        <main>
+            <div class="content">
+                <article class="card">
+                    <h2 class="productTitle">100 Pageviews</h2>
+                    <div class="containerProgressBar">
+                        <div class="progressBar">
+                            <input type="range">
+                        </div>                    
+                    </div>
+                    <div class="containerPrice">
+                        <div class="price">$<span class="billingMethodNotification">/ month</span></div>
+                    </div>
+                    <!-- Monthly billing button  -->
+                    <div class="monthlyBilling">
+                        <span class="billingActive">Monthly Billing</span> 
+                        <label class="switch">
+                            <input type="checkbox" name="" id="">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="monthlyBilling">
+                        Yearly Billing 25% discount
+                        <span class="billingActive">Monthly Billing</span> 
+                        <div class="yearlyBillingPercentOff">-25%</div>
+                    </div>
+                    <ul>
+                        <li class="advantages">Unlimited websites</li>
+                        <li class="advantages">100% data ownership</li>
+                        <li class="advantages">Email reports</li>
+                    </ul>
+                    <button class="btn callToAction">Start my trial</button>
+                </article>
+            </div>
+        </main>
+        <footer class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#">Hamidou SOW</a>.
+        </footer>
+    </body>
+</html>

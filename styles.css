@@ -1,0 +1,39 @@
+body {
+  background-color: #F9FAFF;
+  height: 100vh;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50%;
+  width: 100%;
+  z-index: -1;
+  background: #f1f5fe;
+  border-radius: 0 0 0 50%;
+}
+
+header {
+  height: 30vh;
+}
+
+/* switch button */
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=styles.css.map */
