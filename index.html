@@ -2,58 +2,74 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <link rel="stylesheet" href="reset.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">        
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">       
         <title>Frontend Mentor | Interactive pricing component</title>   
         
     </head>
     <body>
-        <header>
-            <div class="content">
-                <h1>Simple, traffic-based pricing</h1>
-                <p>Sign-up for our 30-day trial. No credit card required.</p>
-            </div>
-        </header>
-        <main>
-            <div class="content">
-                <article class="card">
-                    <h2 class="productTitle">100 Pageviews</h2>
-                    <div class="containerProgressBar">
-                        <div class="progressBar">
-                            <input type="range">
+        <div class="containerSite">
+            <header>
+                <div class="content">
+                    <h1>Simple, traffic-based pricing</h1>
+                    <p class="text textGrayish">Sign-up for our 30-day trial.
+                        <br>
+                        No credit card required.
+                    </p>
+                </div>
+            </header>
+            <main>
+                <div class="content">
+                    <article class="card">                    
+                        <div class="containerProgressBar">
+                            <div class="progressContent">
+                                <label for="progressBar" class="textGrayish"> <span id="pageViews"></span> Pageviews</label>
+                                <div class="containerPrice mobileDevice">                                
+                                    <span class="priceNumber" id="price"></span>
+                                    <span class="billingMethodNotification textGrayish"> / month</span>
+                                </div>
+                            </div>
+                            <input type="range" name="progressBar" class="styleRange" id="slider" value="50%" min="8" max="32">
                         </div>                    
-                    </div>
-                    <div class="containerPrice">
-                        <div class="price">$<span class="billingMethodNotification">/ month</span></div>
-                    </div>
-                    <!-- Monthly billing button  -->
-                    <div class="monthlyBilling">
-                        <span class="billingActive">Monthly Billing</span> 
-                        <label class="switch">
-                            <input type="checkbox" name="" id="">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="monthlyBilling">
-                        Yearly Billing 25% discount
-                        <span class="billingActive">Monthly Billing</span> 
-                        <div class="yearlyBillingPercentOff">-25%</div>
-                    </div>
-                    <ul>
-                        <li class="advantages">Unlimited websites</li>
-                        <li class="advantages">100% data ownership</li>
-                        <li class="advantages">Email reports</li>
-                    </ul>
-                    <button class="btn callToAction">Start my trial</button>
-                </article>
-            </div>
-        </main>
-        <footer class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-            Coded by <a href="#">Hamidou SOW</a>.
-        </footer>
+                        <!-- Monthly billing button  -->
+                        <div class="wrapBilling">
+                            <div class="monthlyBilling textGrayish smallText">
+                                Monthly Billing
+                                <label class="switch">
+                                    <input type="checkbox" id="checkbox">
+                                    <span class="switchSlider" onclick="toggleCheckbox()"></span>
+                                </label>
+                            </div>
+        
+                            <div class="monthlyBilling textGrayish smallText">
+                                Yearly Billing
+                            </div>
+                        </div>
+                        <span class="line"></span>
+                        <div class="wrapAdvantagesCta">
+                            <ul>
+                                <li class="advantages textGrayish smallText"> Unlimited websites</li>
+                                <li class="advantages textGrayish smallText">100% data ownership</li>
+                                <li class="advantages textGrayish smallText">Email reports</li>
+                            </ul>                        
+                            <button class="btn callToAction">Start my trial</button>
+                        </div> 
+                    </article>
+                </div>
+            </main>
+            <footer class="attribution">
+                <p class="smallText">
+                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                    Coded by <a href="#">Hamidou SOW</a>.
+                </p>
+                
+            </footer>
+        </div>
     </body>
+    <script src="script.js"></script>
 </html>
