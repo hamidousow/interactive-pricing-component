@@ -16,7 +16,7 @@ slider.oninput = function() {
 let toggleCheckbox = () => {    
     if(checkbox.checked === true) {
         slider.oninput = function() {
-            output.innerHTML = this.value / 4;
+            output.innerHTML = "$" + this.value / 4;
             numberPagesViews.innerHTML = (7.5 * this.value) + "k";
         }        
     }
