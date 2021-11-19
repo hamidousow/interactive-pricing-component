@@ -7,13 +7,16 @@ let yearlyBilling = false;
 let periodBilling = document.querySelectorAll('.periodBilling');
 
 /* slider price on input */
-let sumMonthly = [8, 16, 32, 64];
+
 let multiple = 15;
 price1.innerHTML = "$" + (slider.value * multiple);
+price2.innerHTML = "$" + (slider.value * multiple);
 
 slider.oninput = function () {
     slider.value = this.value;
     price1.innerHTML = "$" + (slider.value * multiple);
+    price2.innerHTML = "$" + (slider.value * multiple);
+    
     //console.log(yearlyBilling)
     //console.log(checkbox.checked)
 }
