@@ -1,26 +1,68 @@
 const slider = document.getElementById("slider");
-const output = document.getElementById("price");
-let checkbox = document.querySelector('.switch input');
+let toggleCheckbox = document.querySelector('.switch input');
 const numberPagesViews = document.getElementById('pageViews');
+let price1 = document.getElementById('price');
+let price2 = document.getElementById('price2');
+let yearlyBilling = false;
+let periodBilling = document.querySelectorAll('.periodBilling');
 
-/* slider price */
-output.innerHTML = "$" + slider.value;
-numberPagesViews.innerHTML = (6 * slider.value) + "k";
+/* slider price on input */
+let sumMonthly = [8, 16, 32, 64];
+let multiple = 15;
+price1.innerHTML = "$" + (slider.value * multiple);
 
-slider.oninput = function() {
-    output.innerHTML = "$" + this.value;
-    numberPagesViews.innerHTML = (6 * this.value) + "k";
+slider.oninput = function () {
+    slider.value = this.value;
+    price1.innerHTML = "$" + (slider.value * multiple);
+    //console.log(yearlyBilling)
+    //console.log(checkbox.checked)
 }
 
-/* monthly and yearly billing checkbox */
-let toggleCheckbox = () => {    
-    if(checkbox.checked === true) {
-        slider.oninput = function() {
-            output.innerHTML = "$" + this.value / 4;
-            numberPagesViews.innerHTML = (7.5 * this.value) + "k";
-        }        
+toggleCheckbox.addEventListener('change', function(){
+    if(yearlyBilling == false) {
+        yearlyBilling = true;
+        
+    } else {
+        yearlyBilling = false;
     }
-}
+    console.log(yearlyBilling);       
+});
+
+periodBilling.innerHTML = "/ yearly";
+
+console.log(periodBilling.innerHTML)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

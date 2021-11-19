@@ -28,27 +28,37 @@
                     <article class="card">                    
                         <div class="containerProgressBar">
                             <div class="progressContent">
-                                <label for="progressBar" class="textGrayish"> <span id="pageViews"></span> Pageviews</label>
-                                <div class="containerPrice mobileDevice">                                
-                                    <span class="priceNumber" id="price"></span>
-                                    <span class="billingMethodNotification textGrayish"> / month</span>
+                                <p for="progressBar" class="textGrayish"> 
+                                    <span id="pageViews">100k </span> 
+                                    Pageviews
+                                </p>
+                                <div class="containerPrice desktopPrice">                                
+                                    <p class="priceNumber" id="price2">16.00</p>
+                                    <p class="billingMethodNotification textGrayish"> <span class="periodBilling">/ month</span></p>
                                 </div>
                             </div>
-                            <input type="range" name="progressBar" class="styleRange" id="slider" value="50%" min="8" max="32">
+                            <div id="rangeSlider">
+                                <input type="range" name="progressBar" class="styleRange" id="slider" value="2" min="1" max="5">
+                            </div>  
+                            <div class="containerPrice mobilePrice">                                
+                                <p class="priceNumber"> 
+                                    <span id="price">16</span>.00</p>
+                                <p class="billingMethodNotification textGrayish"><span class="periodBilling">/ month</span></p>
+                            </div>                          
                         </div>                    
                         <!-- Monthly billing button  -->
                         <div class="wrapBilling">
-                            <div class="monthlyBilling textGrayish smallText">
+                            <p class="monthlyBilling textGrayish smallText">
                                 Monthly Billing
                                 <label class="switch">
                                     <input type="checkbox" id="checkbox">
-                                    <span class="switchSlider" onclick="toggleCheckbox()"></span>
+                                    <span class="switchCheckbox"></span>
                                 </label>
-                            </div>
+                            </p>
         
-                            <div class="monthlyBilling textGrayish smallText">
+                            <p class="monthlyBilling textGrayish smallText">
                                 Yearly Billing
-                            </div>
+                            </p>
                         </div>
                         <span class="line"></span>
                         <div class="wrapAdvantagesCta">
