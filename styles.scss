@@ -10,7 +10,6 @@ $strongCyan: hsl(174, 86%, 45%);
 $softCyan: hsl(174, 77%, 80%);
 
 .textGrayish {
-    // font-size: 1em;
     color: $grayBlue;
 }
 
@@ -25,11 +24,7 @@ $softCyan: hsl(174, 77%, 80%);
 body {
     background-color: #F9FAFF;
     height: 100vh;
-    position: relative;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-    // align-items: center;
+    position: relative;    
     font-family: 'Manrope', sans-serif;
 
     &::after {
@@ -52,10 +47,6 @@ body {
     justify-content: space-between;
 }
 
-// header, main, footer {
-//     width: 100vw;
-// }
-
 header {
     height: 25vh;        
     display: flex;  
@@ -66,9 +57,7 @@ header {
 
     &::after {
         content: url("./cercles.svg");
-        position: absolute;
-        // top: 50%;
-        // bottom: 50%;
+        position: absolute;        
         height: auto;
         width: auto; 
         z-index: -1;       
@@ -141,19 +130,7 @@ main {
             @media screen and (max-width: 991px) {
                 flex-direction: column;
                 row-gap: 1em;
-            } 
-            .containerPrice {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-
-                .priceNumber {
-                    font-size: 1.8em;
-                    font-weight: 900;
-                }
             }
-
         }
         .styleRange {
             -webkit-appearance: none;
@@ -162,14 +139,9 @@ main {
             margin: 2em 0;
             border-radius: 20px;
             outline: none;
-            height: 7px;
-            background: hsl(224, 65%, 95%); 
+            height: 7px;            
             background: $strongCyan;                                              
-        }
-
-        // input[type=range]::-moz-range-thumb {
-        //     background-color: green;
-        // }    
+        }   
 
         .styleRange::-webkit-slider-thumb { 
             -webkit-appearance: none;
@@ -188,7 +160,32 @@ main {
             background: $softCyan;
             cursor: pointer;
         }
-    }       
+    }   
+    
+    .priceNumber {
+        font-size: 1.8em;
+        font-weight: 900;        
+    }
+
+    .desktopPrice {
+        display: none;
+    }
+
+    .mobilePrice {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    @media screen and (min-width: 991px) {
+
+        .mobilePrice {
+            display: none;
+        }
+        .desktopPrice {
+            display: inline-flex;
+            align-items: center;
+        }           
+    }
 
     .wrapBilling {
         display: flex;
@@ -219,7 +216,7 @@ main {
                 height: 0;
             }
 
-            .switchSlider {
+            .switchCheckbox {
                 position: absolute;
                 left: 0;
                 right: 0;
@@ -244,17 +241,17 @@ main {
                 }
             }
 
-            input:checked + .switchSlider:before {                
+            input:checked + .switchCheckbox:before {                
                 transform: translate(100%, -50%);                
             }
             
             @media screen and (min-width: 992px) {
-                input:hover + .switchSlider {
+                input:hover + .switchCheckbox {
                     background: $softCyan;
                 }
             }
             
-            input:checked + .switchSlider {
+            input:checked + .switchCheckbox {
                 background: $strongCyan;
             }
         }
