@@ -168,27 +168,6 @@ main .containerProgressBar .progressContent {
   }
 }
 
-main .containerProgressBar .progressContent .containerPrice {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main .containerProgressBar .progressContent .containerPrice .priceNumber {
-  font-size: 1.8em;
-  font-weight: 900;
-}
-
 main .containerProgressBar .styleRange {
   -webkit-appearance: none;
   width: 100%;
@@ -198,7 +177,6 @@ main .containerProgressBar .styleRange {
   border-radius: 20px;
   outline: none;
   height: 7px;
-  background: #eaeefb;
   background: #10d5c2;
 }
 
@@ -218,6 +196,38 @@ main .containerProgressBar .styleRange::-moz-range-thumb {
   border-radius: 50%;
   background: #a5f3eb;
   cursor: pointer;
+}
+
+main .priceNumber {
+  font-size: 1.8em;
+  font-weight: 900;
+}
+
+main .desktopPrice {
+  display: none;
+}
+
+main .mobilePrice {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 991px) {
+  main .mobilePrice {
+    display: none;
+  }
+  main .desktopPrice {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 main .wrapBilling {
@@ -270,7 +280,7 @@ main .wrapBilling .switch input {
   height: 0;
 }
 
-main .wrapBilling .switch .switchSlider {
+main .wrapBilling .switch .switchCheckbox {
   position: absolute;
   left: 0;
   right: 0;
@@ -283,7 +293,7 @@ main .wrapBilling .switch .switchSlider {
   cursor: pointer;
 }
 
-main .wrapBilling .switch .switchSlider::before {
+main .wrapBilling .switch .switchCheckbox::before {
   position: absolute;
   content: "";
   height: 17px;
@@ -298,18 +308,18 @@ main .wrapBilling .switch .switchSlider::before {
   background: #ffffff;
 }
 
-main .wrapBilling .switch input:checked + .switchSlider:before {
+main .wrapBilling .switch input:checked + .switchCheckbox:before {
   -webkit-transform: translate(100%, -50%);
           transform: translate(100%, -50%);
 }
 
 @media screen and (min-width: 992px) {
-  main .wrapBilling .switch input:hover + .switchSlider {
+  main .wrapBilling .switch input:hover + .switchCheckbox {
     background: #a5f3eb;
   }
 }
 
-main .wrapBilling .switch input:checked + .switchSlider {
+main .wrapBilling .switch input:checked + .switchCheckbox {
   background: #10d5c2;
 }
 
