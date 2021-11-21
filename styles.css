@@ -14,7 +14,6 @@
 
 body {
   background-color: #F9FAFF;
-  height: 100vh;
   position: relative;
   font-family: 'Manrope', sans-serif;
 }
@@ -28,11 +27,11 @@ body::after {
   width: 100%;
   z-index: -3;
   background: #e6edff;
-  border-radius: 0 0 0 50%;
+  border-radius: 0 0 0 200px;
 }
 
 .containerSite {
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

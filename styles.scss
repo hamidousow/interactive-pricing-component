@@ -22,8 +22,7 @@ $softCyan: hsl(174, 77%, 80%);
 }
 
 body {
-    background-color: #F9FAFF;
-    height: 100vh;
+    background-color: #F9FAFF;    
     position: relative;    
     font-family: 'Manrope', sans-serif;
 
@@ -41,7 +40,7 @@ body {
 }
 
 .containerSite {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
