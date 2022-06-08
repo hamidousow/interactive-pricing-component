@@ -307,7 +307,7 @@ main {
         }
     } 
     
-    .callToAction {
+    .btnSendReq {
         background: $darkBlue;
         color: $paleBlue;
         font-weight: 600;        
@@ -316,6 +316,13 @@ main {
         border: none;
         border-radius: 25px;
         align-self: center; 
+        transition: .9s;
+        &:hover {
+            cursor: pointer;
+            background: $paleBlue;
+            color: $darkBlue;
+            
+        }
     }
 }
 
