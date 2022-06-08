@@ -48,6 +48,7 @@ function setPrice() {
     let i = slider.value;
     price = monthlyPrice[i]
     price1.innerHTML = price;
+    price2.innerHTML = price;
 }
 
 function setPageViews() {
