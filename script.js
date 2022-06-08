@@ -15,18 +15,6 @@ let price;
 
 let yearlyBilling = checkbox.checked;
 
-checkbox.addEventListener('click', function() {
-    let tmp = [""];
-    if(yearlyBilling == false) {
-        
-        yearlyBilling = true;
-        
-    } else if(yearlyBilling == true) {
-        yearlyBilling = false;                  
-    }
-    
-})
-
 setPrice();
 setPageViews();
 
@@ -35,20 +23,34 @@ slider.addEventListener('input', function() {
     setPrice();    
 })
 
-// yearlyBilling ? yearlyBilling : monthlyPrice;
+checkbox.addEventListener('click', ()=> {
+    activeBilling();
+    setPrice();    
+})
 
 
-
-
-function activeFireSale() {
-    console.log(yearlyBilling)    
+function activeBilling() {
+    if(yearlyBilling == false) {
+        yearlyBilling = true;
+        console.log("prix reduit")
+    
+    } else {            
+        yearlyBilling = false;
+        console.log("prix normal")                        
+    }
 }
 
-function setPrice() {    
+function setPrice() {
+    price = yearlyBilling ? yearlyPrice : monthlyPrice;    
     let i = slider.value;
-    price = monthlyPrice[i]
-    price1.innerHTML = price;
-    price2.innerHTML = price;
+    // price = monthlyPrice[i]
+    price1.innerHTML = price[i];
+    price2.innerHTML = price[i];      
+
+    // while(yearlyBilling) {
+    //     price1.innerHTML = parseInt(price);
+    //     break
+    // }
 }
 
 function setPageViews() {
