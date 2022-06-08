@@ -28,11 +28,11 @@ checkbox.addEventListener('click', ()=> {
 function activeBilling() {
     if(yearlyBilling == false) {
         yearlyBilling = true;
-        // console.log("prix reduit")
+        console.log("prix reduit")
     
     } else {            
         yearlyBilling = false;
-        // console.log("prix normal")                        
+        console.log("prix normal")                        
     }
 }
 
