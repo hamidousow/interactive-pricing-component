@@ -396,7 +396,7 @@ main .wrapAdvantagesCta .advantages::before {
   margin-right: 1em;
 }
 
-main .callToAction {
+main .btnSendReq {
   background: #293356;
   color: #bdccff;
   font-weight: 600;
@@ -407,6 +407,14 @@ main .callToAction {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-transition: .9s;
+  transition: .9s;
+}
+
+main .btnSendReq:hover {
+  cursor: pointer;
+  background: #bdccff;
+  color: #293356;
 }
 
 footer {
