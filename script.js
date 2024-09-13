@@ -1,15 +1,13 @@
 const slider = document.getElementById("slider");
 
-let price1 = document.getElementById('price');
-let price2 = document.getElementById('price2');
+let finalPrice = document.getElementById('price');
 let pageViews = document.getElementById('pageViews');
 let checkbox = document.getElementById('checkbox');
 
-let yearlyPrice = ["5.25" ,"9.00" ,"12.00", "18.00", "24.00"];
 let monthlyPrice = ["7.00" ,"12.00" ,"16.00", "24.00", "32.00"];
 let price;
 
-let yearlyBilling = checkbox.checked;
+let isYearlyBillingEnabled = false;
 
 setPrice();
 setPageViews();
@@ -26,23 +24,19 @@ checkbox.addEventListener('click', ()=> {
 
 
 function activeBilling() {
-    if(yearlyBilling == false) {
-        yearlyBilling = true;
-        console.log("prix reduit")
-    
+    if(checkbox.checked) {
+        isYearlyBillingEnabled = true; 
     } else {            
-        yearlyBilling = false;
-        console.log("prix normal")                        
+        isYearlyBillingEnabled = false;                    
     }
 }
 
 function setPrice() {
-    price = yearlyBilling ? yearlyPrice : monthlyPrice;    
-    let i = slider.value;
-    price1.innerHTML = price[i];
-    price2.innerHTML = price[i];      
+    price = isYearlyBillingEnabled ? calculateYearlyPrice(monthlyPrice[slider.value]) : monthlyPrice[slider.value];
+    finalPrice.innerHTML = price;        
 }
 
+// 
 function setPageViews() {
     while(true) {
         if(slider.value == 0) {
@@ -62,6 +56,12 @@ function setPageViews() {
         }
         break;
     }
+}
+
+function calculateYearlyPrice(price) {
+    let multiply = price * 0.25;
+    let result = price - multiply;
+    return result.toFixed(2)
 }
 
 
