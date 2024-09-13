@@ -10,10 +10,10 @@ let price;
 let isYearlyBillingEnabled = false;
 
 setPrice();
-setPageViews();
+setPageViews(slider.value);
 
 slider.addEventListener('input', function() {
-    setPageViews();
+    setPageViews(slider.value);
     setPrice();    
 })
 
@@ -37,21 +37,21 @@ function setPrice() {
 }
 
 // 
-function setPageViews() {
+function setPageViews(inputValue) {
     while(true) {
-        if(slider.value == 0) {
+        if(inputValue == 0) {
             pageViews.innerHTML = "100k";
         }
-        else if(slider.value == 1) {
+        else if(inputValue == 1) {
             pageViews.innerHTML = "200k";
         }
-        else if(slider.value == 2) {
+        else if(inputValue == 2) {
             pageViews.innerHTML = "400k";
         }
-        else if(slider.value == 3) {
+        else if(inputValue == 3) {
             pageViews.innerHTML = "800k";
         }
-        else if(slider.value == 4) {
+        else if(inputValue == 4) {
             pageViews.innerHTML = "1600k";
         }
         break;
